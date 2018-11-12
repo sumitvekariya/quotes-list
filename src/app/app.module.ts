@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 // Imported Custom Created Modules
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MomentDateAdapter, MomentDateModule } from '@angular/material-moment-adapter';
+import { NgxMasonryModule } from 'ngx-masonry';
 
 // Imported Custom Created Components
 import { AppComponent } from './app.component';
@@ -35,11 +35,10 @@ export const MY_FORMATS = {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     FlexLayoutModule,
     MaterialModule,
     MomentDateModule,
+    NgxMasonryModule
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
