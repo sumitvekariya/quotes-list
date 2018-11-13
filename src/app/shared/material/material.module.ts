@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import {
-  MatFormFieldModule,
   MatIconModule,
   MatToolbarModule,
   MatSlideToggleModule
@@ -9,13 +8,11 @@ import {
 @NgModule({
   declarations: [],
   imports: [
-    MatFormFieldModule,
     MatIconModule,
     MatToolbarModule,
     MatSlideToggleModule
   ],
   exports: [
-    MatFormFieldModule,
     MatIconModule,
     MatToolbarModule,
     MatSlideToggleModule

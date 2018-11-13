@@ -38,14 +38,13 @@ export class QuotesListComponent implements AfterContentChecked, OnInit, OnChang
         arrow: true,
         arrowType: 'round',
         size: 'large',
-        duration: 500,
-        animation: 'scale'
+        duration: 1000,
+        animation: 'perspective'
       });
     });
   }
 
   ngOnInit() {
-    console.log(this.isGradient);
     this.quotes = this.commonService.getQuotes();
     this.quotes.forEach(q => {
       q['solid'] = this.generateRandomSolidOrGradient();
@@ -65,15 +64,6 @@ export class QuotesListComponent implements AfterContentChecked, OnInit, OnChang
     const index = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
     return !this.isGradient ? this.gradients[index] : this.solids[index];
   }
-  // generateGradient() {
-  //   const angle = Math.round(Math.random() * 360);
-  //   const randomColourOne = '#000000'.replace(/0/g, (~~(Math.random() * 16)).toString(16));
-
-  //   const randomColourTwo = '#000000'.replace(/0/g, (~~(Math.random() * 16)).toString(16));
-
-  //   const gradient = 'linear-gradient(' + angle + 'deg, ' + randomColourOne + ', ' + randomColourTwo + ')';
-  //   return gradient;
-  // }
 
   getDate(date) {
     return moment(date).format('MMM Do YYYY');

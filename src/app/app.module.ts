@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MomentDateAdapter, MomentDateModule } from '@angular/material-moment-adapter';
-import { NgxMasonryModule } from 'ngx-masonry';
 
 // Imported Custom Created Components
 import { AppComponent } from './app.component';
@@ -43,7 +42,6 @@ export const MY_FORMATS = {
     FlexLayoutModule,
     MaterialModule,
     MomentDateModule,
-    NgxMasonryModule
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
