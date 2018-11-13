@@ -12,7 +12,7 @@ import { gradients, solids } from '../shared/constants';
 export class QuotesListComponent implements AfterContentChecked, OnInit, OnChanges {
 
   quotes = [];
-  @Input() isGradient: boolean = false;
+  @Input() isGradient: boolean = true;
   gradients: string[] = gradients;
   solids: string[] = solids;
 
@@ -63,7 +63,7 @@ export class QuotesListComponent implements AfterContentChecked, OnInit, OnChang
     const maximum = 9;
     const minimum = 0;
     const index = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-    return this.isGradient ? this.gradients[index] : this.solids[index];
+    return !this.isGradient ? this.gradients[index] : this.solids[index];
   }
   // generateGradient() {
   //   const angle = Math.round(Math.random() * 360);

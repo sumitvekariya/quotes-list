@@ -12,10 +12,10 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material';
-import { EscapeHtmlPipe } from './shared/keep-html.pipe';
 import { QuotesListComponent } from './quotes-list/quotes-list.component';
 import { CommonService } from './shared/common.service';
 import { CommonModule } from '@angular/common';
+import { FirstLetterCapitalDirective } from './shared/first-letter-capital.directive';
 
 export const MY_FORMATS = {
   parse: {
@@ -32,8 +32,8 @@ export const MY_FORMATS = {
 @NgModule({
   declarations: [
     AppComponent,
-    EscapeHtmlPipe,
     QuotesListComponent,
+    FirstLetterCapitalDirective
   ],
   imports: [
     BrowserModule,

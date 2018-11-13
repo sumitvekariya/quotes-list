@@ -15,14 +15,14 @@
       </div>
 
       <!-- Back Part Of the Flip Card -->
-      <div class="back" [ngStyle]="{'background-color': '#111111'}">
+      <div class="back" [ngStyle]="{'background': '#111111'}">
         <div class="inner" style="font-family: 'Roboto', sans-serif;">
           <!-- Author's Name -->
           <p style="margin-block-start: 0;">{{quote.author?.name}}</p>
 
           <!-- Author's Profession -->
           <div style="font-size: 15px;">
-            <mat-icon style="vertical-align: middle;">school</mat-icon><span> {{quote.author?.profession}}</span>
+            <mat-icon style="vertical-align: middle;">school</mat-icon><span FirstLetterCapital> {{quote.author?.profession}}</span>
           </div>
           <br />
 
