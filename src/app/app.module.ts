@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material';
 import { EscapeHtmlPipe } from './shared/keep-html.pipe';
+import { QuotesListComponent } from './quotes-list/quotes-list.component';
+import { CommonService } from './shared/common.service';
+import { CommonModule } from '@angular/common';
 
 export const MY_FORMATS = {
   parse: {
@@ -29,10 +32,12 @@ export const MY_FORMATS = {
 @NgModule({
   declarations: [
     AppComponent,
-    EscapeHtmlPipe
+    EscapeHtmlPipe,
+    QuotesListComponent,
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     FlexLayoutModule,
@@ -43,6 +48,7 @@ export const MY_FORMATS = {
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
+    CommonService
   ],
   bootstrap: [AppComponent],
   entryComponents: []

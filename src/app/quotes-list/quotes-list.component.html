@@ -1,0 +1,50 @@
+<!-- This component design consists of all the quotes card (Back & Front) -->
+
+<div class="cols">
+  <div class="col" *ngFor="let quote of quotes" ontouchstart="this.classList.toggle('hover');">
+    <div class="container">
+
+      <!-- Front Part Of the Flip Card -->
+      <div class="front" [ngStyle]="{'background': quote?.solid}">
+        <div class="inner">
+          <p style="margin-block-start: 0;">{{quote.author.name}}</p>
+          <h4 style="font-family: 'Halvetica', serif; margin-bottom: 8%;"><i class="fas fa-quote-left"></i>
+            {{quote.quote}} <i class="fas fa-quote-right"></i></h4>
+          <div style="margin-right: 2px; margin-top: 2%; font-family: roboto;" class="bg" *ngFor="let topic of quote.topics">#{{topic}}</div>
+        </div>
+      </div>
+
+      <!-- Back Part Of the Flip Card -->
+      <div class="back" [ngStyle]="{'background-color': '#111111'}">
+        <div class="inner" style="font-family: 'Roboto', sans-serif;">
+          <!-- Author's Name -->
+          <p style="margin-block-start: 0;">{{quote.author?.name}}</p>
+
+          <!-- Author's Profession -->
+          <div style="font-size: 15px;">
+            <mat-icon style="vertical-align: middle;">school</mat-icon><span> {{quote.author?.profession}}</span>
+          </div>
+          <br />
+
+          <!-- Author's Birthdate -->
+          <div style="font-size: 20px; margin-bottom: 5%;"><i class="fas fa-birthday-cake"></i>
+            {{getDate(quote.author.born)}}</div>
+
+          <!-- Author's Death -->
+          <div style="font-size: 20px;"><i class="fas fa-book-dead"></i> {{getDate(quote.author.died)}}</div>
+          <br />
+
+          <!-- Likes, Share and Views -->
+          <div style="font-size: 17px; font-family: 'Roboto', sans-serif !important; margin-bottom: 5%;">
+            <i class="fas fa-share-alt"></i><span style="margin-right: 7px;"> {{quote.shareCount}}</span>
+            <i class="far fa-heart"></i><span style="margin-right: 7px;"> {{quote.likeCount}}</span>
+            <i class="fas fa-eye"></i><span style="margin-right: 7px;"> {{quote.viewCount}}</span>
+          </div>
+
+          <!-- Tooltip for intro -->
+          <div [ngClass]="'intro' + quote.id">Know More</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

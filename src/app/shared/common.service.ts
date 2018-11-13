@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-// import { User } from '../users/user.model';
-// import { Post } from '../posts/post.model';
-import { DomSanitizer } from '@angular/platform-browser';
-
+import { quotes } from '../shared/quotes';
+import { Quote } from '../quotes-list/quote.model';
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
-
+  quotesList: Quote[] = quotes;
   constructor(
   ) {}
+
+  getQuotes(): Quote[] {
+    return this.quotesList;
+  }
 
 }

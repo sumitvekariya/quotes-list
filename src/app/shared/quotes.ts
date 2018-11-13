@@ -1,3 +1,5 @@
+import { Quote } from '../quotes-list/quote.model';
+
 export const quotes = [
   {
     shareCount: 15011,
